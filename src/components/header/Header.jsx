@@ -3,13 +3,13 @@ import { FaBars } from "react-icons/fa";
 import Navigation from "./Navigation";
 import { useRef, useState } from "react";
 
-const header = ({ homePageRef, navigationRef }) => {
+const header = ({ homePageRef }) => {
   const headerRef = useRef();
   const logoRef = useRef();
-  console.log(navigationRef);
+  const [navigationRef, setNavigationRef] = useState();
+
   const openNavigation = () => {
     navigationRef.classList.remove("to-left-2000");
-    homePageRef.classList.add("open-navigation");
     document.body.style.overflow = "hidden";
   };
 
@@ -28,6 +28,7 @@ const header = ({ homePageRef, navigationRef }) => {
             >
               <FaBars />
             </div>
+            <Navigation setNavigationRef={setNavigationRef} />
           </div>
         </div>
         <div className="flex items-center flex-1" id="left ">
