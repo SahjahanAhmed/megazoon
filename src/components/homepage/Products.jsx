@@ -11,12 +11,33 @@ const Products = () => {
     };
     request();
   }, []);
+  let filtered = allProducts;
+  // console.log(filtered);
   let { pathname } = useLocation();
-pathname = pathname.replace('/products/','')
-console.log(pathname);
+  pathname = pathname.replace("/products/", "");
+
+  pathname = pathname == "all" ? (pathname = [""]) : pathname;
+  pathname =
+    pathname == "mens"
+      ? (pathname = ["watch", "fragrance", "mens-shirt"])
+      : pathname;
+  pathname =
+    pathname == "womens" ? (pathname = ["womens", "dress", 'fragrance']) : pathname;
+  pathname =
+    pathname == "skincare"
+      ? (pathname = ["skincare", "oil", "perfume"])
+      : pathname;
+  pathname =
+    pathname == "clothes" ? (pathname = ["shirts", "dresses", "dress"]) : pathname;
+  // console.log(pathname);
+  filtered = filtered.filter((pro) => {
+    return pro.category.includes(
+      pathname[0] || pathname[1] || pathname[2]
+    ) ? pro : null;
+  });
   return (
     <div className="w-100vw p-1 flex gap-2 flex-wrap   items-center justify-center ">
-      {allProducts.map((product) => {
+      {filtered.map((product) => {
         return (
           <div
             key={product.id}
