@@ -19,6 +19,10 @@
   transform-origin: top;
   opacity: 0;
 }
+.active {
+  background-color: skyblue;
+  color: #303030;
+}
 
 .navigation-bg {
   background-color: rgba(0, 0, 0, 0.3);

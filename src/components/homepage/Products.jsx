@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const Products = () => {
   const [allProducts, setAllProducts] = useState([]);
-  const [products20, setProducts20] = useState([]);
   useEffect(() => {
     const request = async () => {
       const response = await fetch("https://dummyjson.com/products?limit=100");
       const products = await response.json();
-      setProducts20(products.products.slice(1, 20));
+      setAllProducts(products.products);
     };
     request();
   }, []);
-  // console.log(products20);
-
+  let { pathname } = useLocation();
+pathname = pathname.replace('/products/','')
+console.log(pathname);
   return (
     <div className="w-100vw p-1 flex gap-2 flex-wrap   items-center justify-center ">
-      {products20.map((product) => {
+      {allProducts.map((product) => {
         return (
           <div
             key={product.id}

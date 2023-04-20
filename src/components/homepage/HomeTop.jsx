@@ -14,20 +14,35 @@ const HomeTop = () => {
 
       <div className="">
         <div className=" w-90vw flex gap-2 text-sm  overflow-x-scroll justify-evenly  text-gray-200 xs:justify-center xs:gap-1 xs:overflow-x-visible ">
-          <NavLink className="rounded-2xl p- text-center shadow-sm shadow-gray-200  p-1 hover:text-gray-900 hover:bg-slate-400 transition-03s hover:scale-105">
+          <NavLink
+            to="/products/all"
+            className="rounded-2xl p- text-center shadow-sm shadow-gray-200  p-1 hover:text-gray-900 hover:bg-slate-400 transition-03s hover:scale-105"
+          >
             All
           </NavLink>
-          <NavLink className="rounded-2xl shadow-sm  shadow-gray-200 p-1 px-3 hover:text-gray-900 hover:bg-slate-400 transition-03s hover:scale-105">
+          <NavLink
+            to="/products/mens"
+            className="rounded-2xl shadow-sm  shadow-gray-200 p-1 px-3 hover:text-gray-900 hover:bg-slate-400 transition-03s hover:scale-105"
+          >
             Men's
           </NavLink>
-          <NavLink className="rounded-2xl shadow-sm shadow-gray-200 p-1 px-3 hover:text-gray-900 hover:bg-slate-400 transition-03s hover:scale-105 ">
+          <NavLink
+            to="/products/womens"
+            className="rounded-2xl shadow-sm shadow-gray-200 p-1 px-3 hover:text-gray-900 hover:bg-slate-400 transition-03s hover:scale-105 "
+          >
             Women's
           </NavLink>
-          <NavLink className="rounded-2xl shadow-sm shadow-gray-200 p-1 px-3 hover:text-gray-900 hover:bg-slate-400 transition-03s hover:scale-105">
-            Clothes
-          </NavLink>
-          <NavLink className="rounded-2xl shadow-sm shadow-gray-200 p-1 px-3 hover:text-gray-900 hover:bg-slate-400 transition-03s hover:scale-105">
+          <NavLink
+            to="/products/skincare"
+            className="rounded-2xl shadow-sm shadow-gray-200 p-1 px-3 hover:text-gray-900 hover:bg-slate-400 transition-03s hover:scale-105"
+          >
             Skincare
+          </NavLink>
+          <NavLink
+            to="/products/clothes"
+            className="rounded-2xl shadow-sm shadow-gray-200 p-1 px-3 hover:text-gray-900 hover:bg-slate-400 transition-03s hover:scale-105"
+          >
+            Clothes
           </NavLink>
         </div>
       </div>

@@ -1,19 +1,21 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import Navigation from "./Navigation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const header = ({ homePageRef }) => {
+const header = ({ homePageRef, setSearchText }) => {
   const headerRef = useRef();
   const logoRef = useRef();
   const [navigationRef, setNavigationRef] = useState();
+  const [text, setText] = useState("");
+
+  setSearchText(text);
 
   const openNavigation = () => {
     navigationRef.classList.remove("to-left-2000");
     document.body.style.overflow = "hidden";
   };
 
-  // console.log(homePageRef);
   return (
     <div
       ref={headerRef}
@@ -51,6 +53,8 @@ const header = ({ homePageRef }) => {
       <div className="flex gap-4 flex-1">
         <div className="flex-1" id="middle">
           <input
+            onChange={(e) => setText(e.target.value)}
+            value={text}
             type="search"
             placeholder="search products..."
             className="
