@@ -16,6 +16,7 @@ export default {
       "250px": "250px",
       "300px": "300px",
       "350px": "350px",
+      "100%": "100%",
     },
     width: {
       "100vw": "100vw",
@@ -42,21 +43,26 @@ export default {
       "300px": "300px",
       "250px": "250px",
       "200px": "200px",
+      "100vh": "100vh",
     },
     maxWidth: {
       "300px": "300px",
       "250px": "250px",
       "200px": "200px",
     },
-    miWidth: {
+    minWidth: {
       "300px": "300px",
       "200px": "200px",
+      "100vw": "100vw",
+      "80vw": "80vw",
     },
     minHeight: {
       "300px": "300px",
       "200px": "200px",
       "150px": "150px",
       "100px": "100px",
+      "100vh": "100vh",
+      "80vh": "80vh",
     },
 
     screens: {
@@ -70,6 +76,16 @@ export default {
       xl: "1280px",
 
       "2xl": "1536px",
+    },
+    boxShadow: {
+      both: "0 0 10px white",
+      bothlg: "0 0 50px white",
+      bothsm: "0 0 6px white",
+      bothxs: "0 0 2px white",
+      bothxl: "0 0 100px white",
+      both2xl: "0 0 200px gray",
+      topxs: "0 -.5px 0px gray ",
+      bottomxs: "0 .5px 0px gray ",
     },
   },
   plugins: [],

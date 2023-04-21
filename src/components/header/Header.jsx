@@ -2,7 +2,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import Navigation from "./Navigation";
 import { useEffect, useRef, useState } from "react";
-
+import { Link } from "react-router-dom";
 const header = ({ homePageRef, setSearchText }) => {
   const headerRef = useRef();
   const logoRef = useRef();
@@ -19,7 +19,7 @@ const header = ({ homePageRef, setSearchText }) => {
   return (
     <div
       ref={headerRef}
-      className="flex flex-col-reverse xs:flex-row  xs:justify-evenly  shadow-sm  shadow-gray-800  items-center gap-1 w-screen bg-slate-900 h-10vh sticky top-0 py-2 header"
+      className="flex flex-col-reverse xs:flex-row  xs:justify-evenly  shadow-bottomxs  items-center gap-1 w-screen bg-slate-900 h-10vh z-40 sticky top-0 py-2 header"
     >
       <div className=" flex flex-1">
         <div className="flex items-center justify-center ml-2">
@@ -34,7 +34,8 @@ const header = ({ homePageRef, setSearchText }) => {
           </div>
         </div>
         <div className="flex items-center flex-1" id="left ">
-          <div
+          <Link
+            to="/products/all"
             ref={logoRef}
             className="text-white font-ubuntu text-2xl flex mx-6 transition-all"
           >
@@ -46,7 +47,7 @@ const header = ({ homePageRef, setSearchText }) => {
             <span className="text-sky-400">o</span>
             <span className="text-sky-400">o</span>
             <span>n</span>
-          </div>
+          </Link>
         </div>
       </div>
 

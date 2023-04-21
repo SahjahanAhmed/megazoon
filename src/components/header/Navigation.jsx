@@ -17,7 +17,7 @@ const Navigation = ({ setNavigationRef }) => {
       ref={navigationRef}
       className=" navigation absolute left-0 top-0 h-100vh w-100vw flex items-start text-white  transition-05s to-left-2000  z-10"
     >
-      <div className="bg-gray-900 opacity-100 shadow-2xl shadow-gray-200 p-2 h-100vh w-80vw xs:w-50vw sm:w-30vw lg:w-20vw ">
+      <div className="bg-gray-900 opacity-100  shadow-bothlg p-2 h-100vh w-80vw xs:w-50vw sm:w-30vw lg:w-20vw ">
         <div
           onClick={() => hideNavigation()}
           className="text-whiten bars-size text-xl cursor-pointer transition-all hover:bg-gray-700  p-2  rounded-full  "

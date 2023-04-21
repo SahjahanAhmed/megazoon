@@ -20,10 +20,12 @@
   opacity: 0;
 }
 .active {
-  background-color: skyblue;
-  color: #303030;
+  background-color: skyblue !important;
+  color: #303030 !important;
 }
-
+.bg-light {
+  background-color: #9999;
+}
 .navigation-bg {
   background-color: rgba(0, 0, 0, 0.3);
 }

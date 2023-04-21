@@ -3,7 +3,7 @@ import { FaShoppingBag } from "react-icons/fa";
 import ContactForm from "./ContactForm";
 const Footer = () => {
   return (
-    <div className="w-screen bg-slate-900 p-2 pt-4 mt-6 shadow-sm  shadow-gray-300">
+    <div className="w-screen bg-slate-900 p-2 pt-4 mt-6 shadow-topxs">
       <div className="flex items-center flex-col flex-1" id="left ">
         <div className="text-white font-ubuntu text-2xl flex mx-6 transition-all">
           <span>M</span>
@@ -25,20 +25,20 @@ const Footer = () => {
       </div>
 
       <div className="flex flex-col sm:flex-row gap-8 items-center  bg-gray-900 text-gray-300 my-6">
-        <div className="flex1 px-2 font-dongle text-3xl text-center">
-          <h1 className="text-4xl text-center"> Our goal</h1>
+        <div className="flex1 px-2 font-ubuntu text-lg text-center">
+          <h1 className="text-2xl text-center"> Our goal</h1>
           <span>
-            <span className="text-4xl"> is</span> to giving you a better
+            <span className="text-2xl"> is</span> to giving you a better
             experience of shopping.
           </span>
           <br />
           <span>
-            <span className="text-4xl">is</span> to make our customer recommend
+            <span className="text-2xl">is</span> to make our customer recommend
             our services to others by giving the best services.
           </span>
           <br />
           <span>
-            <span className="text-4xl ">is</span> to make sure our customer is
+            <span className="text-2xl ">is</span> to make sure our customer is
             happy after getting our services.
           </span>
           <br />
@@ -46,10 +46,10 @@ const Footer = () => {
             Are you happy with our services ?
           </h5>
           <div className="flex items-center justify-center gap-40 mt-4 ">
-            <button className="shadow shadow-white rounded-lg p-2 text-green-500  hover:scale-105 transition-all">
+            <button className="shadow-bothsm rounded-lg p-2 text-green-500  hover:scale-105 transition-all">
               Yes
             </button>
-            <button className="shadow shadow-white rounded-lg p-2 text-red-500 hover:scale-105 transition-all ">
+            <button className="shadow-bothsm rounded-lg p-2 text-red-500 hover:scale-105 transition-all ">
               No
             </button>
           </div>
