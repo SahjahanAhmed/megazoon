@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { searchContext } from "../../App";
 import NetworkErrorCheck from "../NetworkErrorCheck";
 import { filterValuesContext } from "../../App";
-const Products = () => {
+const Products = ({ setGetCurrentItem }) => {
+  let { pathname } = useLocation();
   const getFilteredValues = useContext(filterValuesContext);
-  // console.log(typeof getFilteredValues.category);
   const search = useContext(searchContext);
   const [allProducts, setAllProducts] = useState([]);
   useEffect(() => {
@@ -16,10 +16,23 @@ const Products = () => {
     };
     request();
   }, []);
-  let { pathname } = useLocation();
+  // const [CurrentItem, setCurrentItem] = useState("");
+  const handleCurrentItem = (e) => {
+    const currentItemElement = e.target.parentElement;
+    let currentItem = allProducts.filter((product) => {
+      return product.id == currentItemElement.id;
+    });
+    setGetCurrentItem(currentItem);
+  };
+  const handleCurrentItemOnclickImg = (e) => {
+    let currentItemElement = e.currentTarget.parentElement.parentElement;
+    let currentItem = allProducts.filter((product) => {
+      return product.id == currentItemElement.id;
+    });
+    setGetCurrentItem(currentItem);
+  };
   pathname = pathname.replace("/products/", "");
-
-  pathname = pathname == "all" ? (pathname = [""]) : pathname;
+  pathname = pathname == "/" ? (pathname = [""]) : pathname;
   pathname =
     pathname == "mens"
       ? (pathname = ["watch", "sunglass", "mens-shirt"])
@@ -36,18 +49,13 @@ const Products = () => {
     pathname == "clothes"
       ? (pathname = ["shirts", "dresses", "womens shirts"])
       : pathname;
-  // console.log(pathname);
   let filtered = allProducts;
-  // console.log(filtered);
-  // filtered = [];
-  // console.log(typeof getFilteredValues.category);
   filtered = filtered.filter((product) => {
     return (product =
       product.category.includes(getFilteredValues.category.toLowerCase()) &&
       product.price >= getFilteredValues.starting &&
       product.price <= getFilteredValues.end);
   });
-  // console.log(filtered);
   filtered = filtered.filter((pro) => {
     return (
       pro.category.includes(pathname[0]) ||
@@ -69,6 +77,7 @@ const Products = () => {
         {filtered.map((product) => {
           return (
             <div
+              id={product.id}
               key={product.id}
               className=" border gap-2 relative bg-white text-black rounded-xl p-1 max-w-300px max-h-300px flex flex-col justify-between items-center overflow-scroll"
             >
@@ -76,18 +85,25 @@ const Products = () => {
                 {product.title}
               </div>
               <div className="flex items-center justify-center">
-                <img
-                  src={product.thumbnail}
-                  alt=""
-                  className=" max-w-300px max-h-200px cursor-pointer transition-all hover:scale-150"
-                />
+                <Link to="/mycart" onClick={handleCurrentItemOnclickImg}>
+                  <img
+                    src={product.thumbnail}
+                    alt=""
+                    className=" max-w-300px max-h-200px cursor-pointer transition-all hover:scale-150"
+                  />
+                </Link>
               </div>
               <div className=" text-center opacity-80">
                 {product.description}
               </div>
-              <div className="flex items-center text-xs border border-black rounded-2xl p-1  z-10 justify-center absolute top-0 right-0 bg-slate-300 transition-all  hover:font-bold cursor-pointer">
+
+              <Link
+                to="/mycart"
+                onClick={handleCurrentItem}
+                className="flex items-center text-xs border border-black rounded-2xl p-1  z-10 justify-center absolute top-0 right-0 bg-slate-300 transition-all  hover:font-bold cursor-pointer"
+              >
                 Add to cart
-              </div>
+              </Link>
               <div className="flex items-center text-xs border font-bold border-black rounded-lg p-1  z-10 justify-center absolute bottom-0 left-0 bg-slate-900 text-white transition-all ">
                 Only ${product.price}
               </div>

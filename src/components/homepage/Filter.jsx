@@ -44,7 +44,7 @@ const Filter = ({ setGetFilter, setGetFilterValues }) => {
   return (
     <div
       ref={filterRef}
-      className="absolute to-left-2000 opacity-100 transition-all transition-05s bg-light  h-100vh w-100vw z-50 flex items-center justify-center"
+      className="absolute to-left-2000 opacity-100 transition-all transition-03s bg-light  h-100vh w-100vw z-50 flex items-center justify-center"
     >
       <form
         onSubmit={handleFiltering}
@@ -87,10 +87,10 @@ const Filter = ({ setGetFilter, setGetFilterValues }) => {
                 className="bg-gray-900 shadow-bothxs rounded text-gray-400 "
               >
                 <option value="">All</option>
-                <option value="mens"> Men</option>
+                <option value="sunglass"> Men</option>
                 <option value="womens">Women</option>
                 <option value="skincare">Skincare</option>
-                <option value="clothes">Clothes</option>
+                <option value="dress">Clothes</option>
               </select>
             </div>
             <div className="flex flex-col">

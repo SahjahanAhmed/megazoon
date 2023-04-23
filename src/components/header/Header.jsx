@@ -3,13 +3,15 @@ import { FaBars } from "react-icons/fa";
 import Navigation from "./Navigation";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
 const header = ({ homePageRef, setSearchText }) => {
   const headerRef = useRef();
   const logoRef = useRef();
   const [navigationRef, setNavigationRef] = useState();
   const [text, setText] = useState("");
-
-  setSearchText(text);
+  useEffect(() => {
+    setSearchText(text);
+  }, [text]);
 
   const openNavigation = () => {
     navigationRef.classList.remove("to-left-2000");
@@ -19,7 +21,7 @@ const header = ({ homePageRef, setSearchText }) => {
   return (
     <div
       ref={headerRef}
-      className="flex flex-col-reverse xs:flex-row  xs:justify-evenly  shadow-bottomxs  items-center gap-1 w-screen bg-slate-900 h-10vh z-40 sticky top-0 py-2 header"
+      className="flex flex-col-reverse xs:flex-row py-2 xs:justify-evenly  shadow-bottomxs  items-center gap-1 w-screen bg-slate-900 z-40 sticky top-0  header"
     >
       <div className=" flex flex-1">
         <div className="flex items-center justify-center ml-2">
@@ -67,7 +69,9 @@ const header = ({ homePageRef, setSearchText }) => {
         <div className="flex-1 w-100 flex items-center justify-end gap-10 ">
           <div className=" relative  text-white w-6 mx-4">
             <small className="absolute right-3 bottom-0">0</small>
-            <FaShoppingCart className="absolute right-0 cursor-pointer xs:text-xl" />
+            <Link to="/mycart">
+              <FaShoppingCart className="absolute right-0 cursor-pointer xs:text-xl" />
+            </Link>
           </div>
         </div>
       </div>
