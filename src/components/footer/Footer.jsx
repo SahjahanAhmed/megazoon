@@ -3,9 +3,9 @@ import { FaShoppingBag } from "react-icons/fa";
 import ContactForm from "./ContactForm";
 const Footer = () => {
   return (
-    <div className="w-screen bg-slate-900 p-2 pt-4 mt-6 shadow-topxs">
+    <div className="w-screen bg-slate-900 p-2 pt-4 shadow-topxs theme ">
       <div className="flex items-center flex-col flex-1" id="left ">
-        <div className="text-white font-ubuntu text-2xl flex mx-6 transition-all">
+        <div className="text-white font-ubuntu text-2xl flex mx-6 transition-all ">
           <span>M</span>
           <span>e</span>
           <span>g</span>
@@ -15,7 +15,7 @@ const Footer = () => {
           <span className="text-sky-400">o</span>
           <span>n</span>
         </div>
-        <div className="flex text-white">
+        <div className="flex text-white ">
           <span> We say, </span>
           <span className="ml-1"> No shy to buy </span>
           <span className="ml-2 mt-1">
@@ -24,8 +24,8 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-8 items-center  bg-gray-900 text-gray-300 my-6">
-        <div className="flex1 px-2 font-ubuntu text-lg text-center">
+      <div className="flex flex-col sm:flex-row gap-8 items-center  bg-gray-900 text-gray-300 my-6 theme ">
+        <div className="flex1 px-2 font-ubuntu text-lg text-center theme ">
           <h1 className="text-2xl text-center"> Our goal</h1>
           <span>
             <span className="text-2xl"> is</span> to giving you a better
@@ -54,12 +54,12 @@ const Footer = () => {
             </button>
           </div>
         </div>
-        <div className="flex1 flex flex-col items-center justify-center px-2 w-80%">
+        <div className="flex1 flex flex-col items-center justify-center px-2 w-80% ">
           <h1 className="text-2xl my-2">Contact Us</h1>
           <ContactForm />
         </div>
       </div>
-      <div className="text-slate-300 text-center mt-20">
+      <div className="text-slate-300 text-center mt-20 ">
         <span className="text-lg">&copy;</span>
         <span>megazoon.com 2023</span>
         <br />

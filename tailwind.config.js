@@ -49,7 +49,9 @@ export default {
       "100vh": "100vh",
     },
     maxWidth: {
+      "100vw": "100vw",
       "300px": "300px",
+      "400px": "400px",
       "250px": "250px",
       "200px": "200px",
     },
@@ -89,6 +91,9 @@ export default {
       both2xl: "0 0 200px gray",
       topxs: "0 -.5px 0px gray ",
       bottomxs: "0 .5px 0px gray ",
+    },
+    top: {
+      "10vh": "10vh",
     },
   },
   plugins: [],

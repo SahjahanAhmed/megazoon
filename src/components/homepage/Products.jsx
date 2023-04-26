@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { searchContext } from "../../App";
 import NetworkErrorCheck from "../NetworkErrorCheck";
@@ -16,7 +16,32 @@ const Products = ({ setGetCurrentItem }) => {
     };
     request();
   }, []);
-  // const [CurrentItem, setCurrentItem] = useState("");
+  const empty = useRef();
+  const netError = useRef();
+
+  useEffect(() => {
+    return;
+    if (empty.current === null) {
+    } else {
+      setInterval(() => {
+        Array.from(empty.current.children).forEach((item) => {
+          item.classList.toggle("opacity-50");
+        });
+      }, 500);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (empty.current === null) {
+      return;
+    } else {
+      setTimeout(() => {
+        empty.current.style.opacity = "0";
+        netError.current.classList.remove("d-none");
+      }, 30000);
+    }
+  }, []);
+
   const handleCurrentItem = (e) => {
     const currentItemElement = e.target.parentElement;
     let currentItem = allProducts.filter((product) => {
@@ -71,15 +96,16 @@ const Products = ({ setGetCurrentItem }) => {
       pro.brand.includes(search.toLowerCase())
     );
   });
+
   if (filtered.length >= 1) {
     return (
-      <div className="w-100vw p-1 flex gap-2 flex-wrap  items-center justify-center ">
+      <div className="w-100vw p-1 flex gap-2 flex-wrap  items-center justify-center theme ">
         {filtered.map((product) => {
           return (
             <div
               id={product.id}
               key={product.id}
-              className=" border gap-2 relative bg-white text-black rounded-xl p-1 max-w-300px max-h-300px flex flex-col justify-between items-center overflow-scroll"
+              className=" border gap-2 relative bg-white text-black rounded-xl p-1 max-w-300px max-h-300px flex flex-col justify-between items-center overflow-scroll "
             >
               <div className="text-center text-lg font-bold opacity-80">
                 {product.title}
@@ -113,8 +139,52 @@ const Products = ({ setGetCurrentItem }) => {
       </div>
     );
   } else {
-    return <NetworkErrorCheck />;
+    let arr = [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ];
+
+    return (
+      <>
+        <div ref={netError} className="d-none theme">
+          <NetworkErrorCheck />
+        </div>
+        <div
+          ref={empty}
+          className="flex flex-wrap  items-center justify-center gap-4 theme"
+        >
+          {arr.map((a, i) => {
+            return (
+              <div
+                key={i}
+                className="transition-03s w-300px max-h-300px bg-slate-500 rounded-lg p-4 flex flex-col gap-8"
+              >
+                <div className="h-[30px] bg-slate-600"></div>
+                <div className="h-[100px] bg-slate-600"></div>
+              </div>
+            );
+          })}
+        </div>
+      </>
+    );
   }
 };
-
 export default Products;

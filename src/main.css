@@ -26,6 +26,9 @@
 .bg-light {
   background-color: #9999;
 }
+.background-lightgray {
+  background-color: rgb(75 85 99) !important;
+}
 .navigation-bg {
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -34,6 +37,9 @@
 }
 .transition-03s {
   transition: all 0.3s ease-out;
+}
+.transition-1s {
+  transition: all 1s ease-in-out;
 }
 .bars-size {
   height: 36px;
@@ -48,4 +54,27 @@
 
 .header {
   position: sticky;
+}
+.opacity-50 {
+  opacity: 0.7;
+}
+.d-none {
+  display: none;
+}
+
+.toggle {
+  right: 15.5px;
+  background-color: rgb(244, 67, 67);
+}
+
+.transition-0 * {
+  transition: none;
+}
+.dark {
+  background-color: #303030 !important;
+}
+.white {
+  background-color: rgb(161, 199, 199) !important;
+  color: black !important;
+  transition: all 0.2s ease-in-out;
 }

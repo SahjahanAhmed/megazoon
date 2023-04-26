@@ -7,7 +7,6 @@ const HomeTop = () => {
   const getFilter = useContext(filterContext);
 
   useEffect(() => {
-    // console.log(getFilter);
     setFilterState(getFilter);
   }, [getFilter]);
 
@@ -16,7 +15,7 @@ const HomeTop = () => {
   };
 
   return (
-    <div className=" relative p-1 w-screen max-h-10vh  flex items-center  justify-evenly flex-col xs:flex-row overflow-hidden">
+    <div className=" relative p-1 w-screen max-h-10vh  flex items-center  justify-evenly flex-col xs:flex-row overflow-hidden bg-gray-900 theme">
       <div className=" flex justify-center items-center">
         <button
           onClick={showFilter}
@@ -49,7 +48,7 @@ const HomeTop = () => {
           </NavLink>
           <NavLink
             to="/products/skincare"
-            className="rounded-2xl shadow-bothxs p-1 px-3 hover:text-gray-900 hover:bg-slate-400 transition-03s hover:scale-110"
+            className="rounded-2xl shadow-bothxs p-1 px-3 hover:text-gray-900 hover:bg-slate-400 transition-03s hover:scale-110 "
           >
             Skincare
           </NavLink>

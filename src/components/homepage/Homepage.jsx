@@ -10,7 +10,7 @@ const Homepage = ({ setHomePageRef, setGetCurrentItem }) => {
   return (
     <div
       ref={homepageRef}
-      className="w-screen   bg-gray-900 flex flex-col  gap-2 items-center overflow-y-scroll overflow-x-hidden"
+      className="w-screen   bg-gray-900 flex flex-col  gap-2 items-center overflow-y-scroll overflow-x-hidden pb-6 theme "
     >
       <HomeTop />
       <Products setGetCurrentItem={setGetCurrentItem} />
